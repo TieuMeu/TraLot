@@ -1,0 +1,96 @@
+[2025-07-11 01:12:18] Nhận tín hiệu:
+Sell vàng 3323-3321
+Sl 3316
+Tp 50pip++
+Tiếp nha ae
+[2025-07-11 01:12:18] ❌ Gửi lệnh thất bại: Lỗi gửi lệnh: 10030 — Unsupported filling mode
+[2025-07-11 01:12:54] Nhận tín hiệu:
+Sell vàng 3323-3321
+Sl 3316
+Tp 50pip++
+Tiếp nha ae
+[2025-07-11 01:12:54] ❌ Gửi lệnh thất bại: Lỗi gửi lệnh: 10030 — Unsupported filling mode
+[2025-07-11 01:15:56] Nhận tín hiệu:
+Sell vàng 3323-3321
+Sl 3316
+Tp 50pip++
+Tiếp nha ae
+[2025-07-11 01:15:56] ❌ Gửi lệnh thất bại: Lỗi gửi lệnh: 10016 — Invalid stops
+[2025-07-11 01:20:30] Nhận tín hiệu:
+Sell vàng 3326-3328
+Sl 3333
+Tp 50pip++
+[2025-07-11 01:20:30] ✅ Gửi lệnh SELL XAUUSD thành công!
+[2025-07-11 01:50:04] Nhận tín hiệu:
+Sell vàng 3326-3328
+Sl 3333
+Tp 50pip++
+[2025-07-11 01:52:11] Nhận tín hiệu:
+Sell vàng 3326-3328
+Sl 3333
+Tp 50pip++
+[2025-07-11 01:52:11] ❌ Gửi lệnh thất bại: Lỗi gửi lệnh: 10016 — Invalid stops
+[2025-07-11 01:55:57] Nhận tín hiệu:
+Sell vàng 3326-3328
+Sl 3333
+Tp 50pip++
+[2025-07-11 01:55:57] ❌ Gửi lệnh thất bại: send_order() got an unexpected keyword argument 'price'
+[2025-07-11 01:58:44] Nhận tín hiệu:
+Sell vàng 3326-3328
+Sl 3333
+Tp 50pip++
+[2025-07-11 01:58:44] ❌ Gửi lệnh thất bại: send_order() missing 1 required positional argument: 'volume'
+[2025-07-11 02:01:17] Nhận tín hiệu:
+Sell vàng 3326-3328
+Sl 3333
+Tp 50pip++
+[2025-07-11 02:01:17] ❌ Gửi lệnh thất bại: module 'MetaTrader5' has no attribute 'ORDER_SELL_LIMIT'
+[2025-07-11 02:06:43] Nhận tín hiệu:
+Sell vàng 3326-3328
+Sl 3333
+Tp 50pip++
+[2025-07-11 02:06:43] ✅ Gửi lệnh SELL XAUUSD thành công!
+[2025-07-11 02:19:09] Nhận tín hiệu:
+Vàng sell limit 3326-3328
+Sl 3333
+Tp 50pip++
+[2025-07-11 02:19:09] ✅ Gửi lệnh SELL XAUUSD thành công!
+[2025-07-11 02:19:31] Nhận tín hiệu:
++20pip nhé ae
+[2025-07-11 02:19:31] Không hiểu tín hiệu, bỏ qua.
+[2025-07-11 02:19:46] Nhận tín hiệu:
++40pip, chốt dần nha ae 😁
+[2025-07-11 02:19:46] Không hiểu tín hiệu, bỏ qua.
+[2025-07-11 10:20:42] Nhận tín hiệu:
+Vàng sell limit 3326-3328
+Sl 3333
+Tp 50pip++
+[2025-07-11 10:20:42] ✅ Gửi lệnh SELL XAUUSD thành công!
+[2025-07-11 18:49:45] Nhận tín hiệu:
+Vàng buy limit 3340 sl 3335 TP 20pip++
+[2025-07-11 18:49:45] ✅ Gửi lệnh BUY XAUUSD thành công!
+[2025-07-11 18:49:45] Nhận tín hiệu:
+Vàng sell limit 3326-3328
+Sl 3333
+Tp 50pip++
+[2025-07-11 18:49:46] ✅ Gửi lệnh SELL XAUUSD thành công!
+[2025-07-11 18:51:40] Nhận tín hiệu:
+Vàng sell limit 3346
+[2025-07-11 18:51:40] ❌ Gửi lệnh thất bại: 'NoneType' object has no attribute 'retcode'
+[2025-07-11 18:52:17] Nhận tín hiệu:
+Vàng sell limit 3350
+[2025-07-11 18:52:17] ❌ Gửi lệnh thất bại: 'NoneType' object has no attribute 'retcode'
+[2025-07-11 18:52:30] Nhận tín hiệu:
+Sl 3353
+[2025-07-11 18:52:30] Không hiểu tín hiệu, bỏ qua.
+[2025-07-11 18:52:53] Nhận tín hiệu:
+Vàng buy limit 3340 sl 3335 TP 20pip++
+[2025-07-11 18:52:53] ✅ Gửi lệnh BUY XAUUSD thành công!
+[2025-07-11 18:54:09] Nhận tín hiệu:
+Khu vực 3328-3330 đã bị phá vỡ. Ae canh sell tại 3345-3347, sl 3352 nha
+
+ Nếu vàng có về lại 3325-3327 thì canh buy lên nhé
+[2025-07-11 18:54:09] ✅ Gửi lệnh BUY XAUUSD thành công!
+[2025-07-11 18:55:25] Nhận tín hiệu:
+Buy 3333 sl 3330
+[2025-07-11 18:55:25] Không hiểu tín hiệu, bỏ qua.
