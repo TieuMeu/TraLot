@@ -1,5 +1,5 @@
 # bot_telegram.py
-
+import MetaTrader5 as mt5
 import asyncio
 from telethon import TelegramClient, events
 from config import api_id, api_hash, phone_number, group_id
@@ -8,8 +8,9 @@ from mt5_trading import send_order
 import os
 import re
 from datetime import datetime
-from order_tracker import move_sl_to_breakeven, close_positions_if_profit
-
+# from order_tracker import move_sl_to_breakeven, close_positions_if_profit
+from order_manager import send_split_orders
+from price_watcher import start_price_watcher, handle_message_update
 # === Ghi log đơn giản ===
 def write_log(message):
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -32,11 +33,12 @@ async def main():
         write_log(f"Nhận tín hiệu:\n{text}")
 
         # Xử lý yêu cầu "dời sl", "chốt"
-        if any(key in text.lower() for key in ["dời sl", "chốt"]):
-            moved = move_sl_to_breakeven("XAUUSD")
-            if moved:
-                print(f"✅ Đã dời SL cho các lệnh: {moved}")
-
+        # if any(key in text.lower() for key in ["dời sl", "chốt"]):
+        #     moved = move_sl_to_breakeven("XAUUSD")
+        #     if moved:
+        #         print(f"✅ Đã dời SL cho các lệnh: {moved}")
+        if any(key in text.lower() for key in ["dời sl", "chốt", "pip"]):
+             handle_message_update(text)
         # Xử lý yêu cầu +N pip
         pip_match = re.search(r'\+(\d+)\s*pip', text.lower())
         if pip_match:
@@ -44,19 +46,19 @@ async def main():
             closed = close_positions_if_profit("XAUUSD", pip_target)
             if closed:
                 print(f"✅ Đã chốt lời các lệnh: {closed}")
-
+        
         # Phân tích lệnh giao dịch mới
         order = extract_order_data(text)
         if order:
             try:
-                send_order(
-                    symbol=order["symbol"],
-                    order_type=order["type"],
-                    volume=0.02,
-                    entry=order["entry"],
-                    sl=order["sl"],
-                    tp=order["tp"]
+                send_split_orders(
+                 symbol=order["symbol"],
+                 order_type=order["type"],
+                 entry=order["entry"],
+                 sl_pip=order["sl"],
+                 tp_levels=order["tp"]
                 )
+                start_price_watcher(order["symbol"], order["entry"], order["type"])
                 msg = f"✅ Gửi lệnh {order['type'].upper()} {order['symbol']} thành công!"
                 print(msg)
                 write_log(msg)
@@ -69,7 +71,7 @@ async def main():
             write_log("Không hiểu tín hiệu, bỏ qua.")
 
     await client.run_until_disconnected()
-
+        
 # === Chạy bot ===
 if __name__ == "__main__":
     asyncio.run(main())

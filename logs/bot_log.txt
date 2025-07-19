@@ -94,3 +94,121 @@ Khu vực 3328-3330 đã bị phá vỡ. Ae canh sell tại 3345-3347, sl 3352 n
 [2025-07-11 18:55:25] Nhận tín hiệu:
 Buy 3333 sl 3330
 [2025-07-11 18:55:25] Không hiểu tín hiệu, bỏ qua.
+[2025-07-20 05:09:11] Nhận tín hiệu:
+Sell vàng 3358-3360
+Sl 3365
+Tp 50pip++
+[2025-07-20 05:09:11] ❌ Gửi lệnh thất bại: object of type 'float' has no len()
+[2025-07-20 05:16:46] Nhận tín hiệu:
+Sell vàng 3358-3360
+Sl 3365
+Tp 50pip++
+[2025-07-20 05:16:46] ❌ Gửi lệnh thất bại: Số TP phải bằng số phần chia lệnh!
+[2025-07-20 05:23:12] Nhận tín hiệu:
+Sell vàng 3358-3360
+Sl 3365
+Tp 50pip++
+[2025-07-20 05:32:46] Nhận tín hiệu:
+Sell vàng 3358-3360
+Sl 3365
+Tp 50pip++
+[2025-07-20 05:32:46] ❌ Gửi lệnh thất bại: Số TP phải bằng số phần chia lệnh!
+[2025-07-20 05:40:12] Nhận tín hiệu:
+Sell vàng 3358-3360
+Sl 3365
+Tp 50pip++
+[2025-07-20 05:40:12] ❌ Gửi lệnh thất bại: send_order() got an unexpected keyword argument 'comment'
+[2025-07-20 05:42:40] Nhận tín hiệu:
+Sell vàng 3358-3360
+Sl 3365
+Tp 50pip++
+[2025-07-20 05:42:40] ✅ Gửi lệnh SELL XAUUSD thành công!
+[2025-07-20 05:45:58] Nhận tín hiệu:
+Sell vàng 3358-3360
+Sl 3365
+Tp 50pip++
+[2025-07-20 05:45:58] ✅ Gửi lệnh SELL XAUUSD thành công!
+[2025-07-20 05:46:55] Nhận tín hiệu:
+Sell vàng 3358-3360
+Sl 3365
+Tp 50pip++
+[2025-07-20 05:46:55] ✅ Gửi lệnh SELL XAUUSD thành công!
+[2025-07-20 05:47:57] Nhận tín hiệu:
+Sell vàng 3358-3360
+Sl 3365
+Tp 50pip++
+[2025-07-20 05:47:57] ✅ Gửi lệnh SELL XAUUSD thành công!
+[2025-07-20 05:49:25] Nhận tín hiệu:
+Sell vàng 3358-3360
+Sl 3365
+Tp 50pip++
+[2025-07-20 05:49:25] ✅ Gửi lệnh SELL XAUUSD thành công!
+[2025-07-20 05:52:07] Nhận tín hiệu:
+Sell vàng 3358-3360
+Sl 3365
+Tp 50pip++
+[2025-07-20 05:52:07] ✅ Gửi lệnh SELL XAUUSD thành công!
+[2025-07-20 05:53:04] Nhận tín hiệu:
+Sell vàng 3358-3360
+Sl 3365
+Tp 50pip++
+[2025-07-20 05:53:04] ✅ Gửi lệnh SELL XAUUSD thành công!
+[2025-07-20 05:54:54] Nhận tín hiệu:
+Sell vàng 3358-3360
+Sl 3365
+Tp 50pip++
+[2025-07-20 05:54:54] ✅ Gửi lệnh SELL XAUUSD thành công!
+[2025-07-20 06:02:17] Nhận tín hiệu:
+Sell vàng 3358-3360
+Sl 3365
+Tp 50pip++
+[2025-07-20 06:02:17] ❌ Gửi lệnh thất bại: send_split_orders() got an unexpected keyword argument 'sl'
+[2025-07-20 06:03:45] Nhận tín hiệu:
+Sell vàng 3358-3360
+Sl 3365
+Tp 50pip++
+[2025-07-20 06:03:45] ❌ Gửi lệnh thất bại: send_order() got an unexpected keyword argument 'price'
+[2025-07-20 06:04:35] Nhận tín hiệu:
+Sell vàng 3358-3360
+Sl 3365
+Tp 50pip++
+[2025-07-20 06:04:35] ❌ Gửi lệnh thất bại: send_split_orders() got an unexpected keyword argument 'tp_price'
+[2025-07-20 06:10:21] Nhận tín hiệu:
+Sell vàng 3358-3360
+Sl 3365
+Tp 50pip++
+[2025-07-20 06:11:52] Nhận tín hiệu:
+Sell vàng 3358-3360
+Sl 3365
+Tp 50pip++
+[2025-07-20 06:11:52] ❌ Gửi lệnh thất bại: send_split_orders() got an unexpected keyword argument 'tp_price'
+[2025-07-20 06:13:20] Nhận tín hiệu:
+Sell vàng 3358-3360
+Sl 3365
+Tp 50pip++
+[2025-07-20 06:13:20] ❌ Gửi lệnh thất bại: send_split_orders() got an unexpected keyword argument 'tp_price'
+[2025-07-20 06:18:00] Nhận tín hiệu:
+Sell vàng 3358-3360
+Sl 3365
+Tp 50pip+
+[2025-07-20 06:18:00] ❌ Gửi lệnh thất bại: send_split_orders() got an unexpected keyword argument 'tp_price'
+[2025-07-20 06:20:04] Nhận tín hiệu:
+Sell vàng 3358-3360
+Sl 3365
+Tp 50pip+
+[2025-07-20 06:20:04] ❌ Gửi lệnh thất bại: send_order() got an unexpected keyword argument 'price'
+[2025-07-20 06:23:31] Nhận tín hiệu:
+Sell vàng 3358-3360
+Sl 3365
+Tp 50pip+
+[2025-07-20 06:23:31] ❌ Gửi lệnh thất bại: name 'result' is not defined
+[2025-07-20 06:27:52] Nhận tín hiệu:
+Sell vàng 3358-3360
+Sl 3365
+Tp 50pip+
+[2025-07-20 06:27:52] ❌ Gửi lệnh thất bại: name 'result' is not defined
+[2025-07-20 06:32:51] Nhận tín hiệu:
+Sell vàng 3358-3360
+Sl 3365
+Tp 50pip+
+[2025-07-20 06:32:51] ❌ Gửi lệnh thất bại: send_split_orders() got an unexpected keyword argument 'symbol'

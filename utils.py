@@ -1,64 +1,81 @@
 # utils.py
-
+import MetaTrader5 as mt5
 import re
-from config import symbol_map, entry_price_index
+from config import symbol_map, entry_price_index, ORDER_SPLIT
+from telegram import Bot
+
+TELEGRAM_TOKEN = 'YOUR_BOT_TOKEN_HERE'  # ← nhớ sửa bằng token thật
+bot = Bot(token=TELEGRAM_TOKEN)
+
 
 def extract_order_data(text):
     lines = text.lower().splitlines()
-    
+
     order_type = None
     symbol = None
-    entry_price = None
-    stop_loss = None
-    take_profit = None
+    entry = None
+    sl = None
+    tp_list = []
+    comment = None
 
     for line in lines:
-        # 1. Loại lệnh
         if 'buy' in line:
             order_type = 'buy'
         elif 'sell' in line:
             order_type = 'sell'
 
-        # 2. Symbol & Entry
         for key in symbol_map:
             if key in line:
                 symbol = symbol_map[key]
-                # Tìm các giá trong dạng: 3333-3321
-                price_match = re.findall(r'\d{3,5}', line)
-                if price_match and len(price_match) >= 1:
-                    entry_price = float(price_match[entry_price_index])
                 break
 
-        # 3. SL
+        if re.search(r'\d{3,5}-\d{3,5}', line):
+            entry_range = re.findall(r'\d{3,5}', line)
+            if entry_range:
+                entry = float(entry_range[entry_price_index])
+
         if 'sl' in line:
-            sl_match = re.search(r'\d{3,5}', line)
+            sl_match = re.findall(r'\d{3,5}', line)
             if sl_match:
-                stop_loss = float(sl_match.group())
+                sl = float(sl_match[0])
 
-        # 4. TP
-        if 'tp' in line:
-            pip_match = re.search(r'(\d+)\s*pip', line)  # <- chuyển ra ngoài trước
-            if pip_match and entry_price:
-                pip_val = int(pip_match.group(1))
-                pip_value = 0.1  # vàng = 0.1 USD/pip
-                take_profit = (
-                    entry_price + pip_val * pip_value
-                    if order_type == 'buy'
-                    else entry_price - pip_val * pip_value
-        )
-    else:
-        tp_match = re.search(r'\d{3,5}', line)
-        if tp_match:
-            take_profit = float(tp_match.group())
+        if 'tp' in line or 'take' in line:
+            if 'pip' in line:
+                pip_match = re.findall(r'(\d+)\s*pip', line)
+                if pip_match:
+                    pip_value = int(pip_match[0])
+                    step = pip_value / ORDER_SPLIT
+                    for i in range(1, ORDER_SPLIT + 1):
+                        if order_type == 'buy':
+                            tp_price = entry + step * i / 10  # 50 pip = 5.0
+                        else:
+                            tp_price = entry - step * i / 10
+                        tp_list.append(round(tp_price, 2))
+            else:
+                tp_values = re.findall(r'\d{3,5}', line)
+                for val in tp_values:
+                    tp_list.append(float(val))
 
-    # Trả về kết quả nếu đủ dữ liệu
-    if all([order_type, symbol, entry_price]):
-        return {
-            'type': order_type,
-            'symbol': symbol,
-            'entry': entry_price,
-            'sl': stop_loss,
-            'tp': take_profit
-        }
-    else:
-        return None
+    if not all([order_type, symbol, entry, sl]) or len(tp_list) != ORDER_SPLIT:
+        raise ValueError("Thông tin tín hiệu chưa đầy đủ hoặc số TP không khớp!")
+
+    return {
+        'type': order_type,
+        'symbol': symbol,
+        'entry': entry,
+        'sl': sl,
+        'tp': tp_list,
+        'comment': comment
+    }
+
+def send_telegram_message(text):
+    bot.send_message(chat_id='YOUR_CHAT_ID_HERE', text=text)
+    
+def get_orders_by_comment(symbol, comment):
+    orders = mt5.positions_get(symbol=symbol)
+    filtered_orders = []
+    if orders:
+        for order in orders:
+            if comment in order.comment:
+                filtered_orders.append(order)
+    return filtered_orders
