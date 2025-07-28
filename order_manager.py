@@ -17,7 +17,7 @@ def send_order(action=1, symbol=SYMBOL, volume=0.01, order_type=0, price=0.0, sl
         "magic": 123456,
         "comment": "AutoTrade by GPT Loli~",
         "type_time": mt5.ORDER_TIME_GTC,
-        "type_filling": mt5.ORDER_FILLING_RETURN,
+        "type_filling": mt5.ORDER_FILLING_FOK,
     }
 
     result = mt5.order_send(request)
@@ -34,7 +34,7 @@ def send_order(action=1, symbol=SYMBOL, volume=0.01, order_type=0, price=0.0, sl
     return True
 
 # Hàm tạo & gửi các lệnh chia theo TP
-def send_split_orders(entry_price, direction="sell"):
+def send_split_orders(entry, direction="sell"):
     orders = []
     volume_per_order = round(VOLUME / ORDER_SPLIT, 2)
 
@@ -61,7 +61,7 @@ def send_split_orders(entry_price, direction="sell"):
             symbol=SYMBOL,
             volume=volume_per_order,
             order_type=order_type,
-            price=entry_price,
+            price=entry,
             sl=sl_price,
             tp=tp_price
         )

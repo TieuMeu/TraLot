@@ -96,7 +96,7 @@ def send_order(symbol, order_type, volume, entry, sl, tp):
         "magic": 123456,
         "comment": "AutoTrade by GPT Loli~",
         "type_time": mt5.ORDER_TIME_GTC,
-        "type_filling": mt5.ORDER_FILLING_RETURN,
+        "type_filling": mt5.ORDER_FILLING_FOK,
     }
 
     print("⚙️ Lệnh chờ sắp đặt:", request)
